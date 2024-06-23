@@ -31,6 +31,8 @@ const handleClick = () => {
                 clickedImgNum = element.dataset.cardId;
                 element.firstChild.style.opacity = 1
                 firstClick = false
+                element.style.pointerEvents = 'none'
+                return;
             } else {
                 if (clickedImgNum == element.dataset.cardId) {
                     element.firstChild.style.opacity = 1
@@ -51,6 +53,7 @@ const handleClick = () => {
                         imageDivs.forEach(element => {
                             if (clickedImgNum == element.dataset.cardId) {
                                 element.firstChild.style.opacity = 0;
+                                element.style.pointerEvents = 'auto'
                             } else null;
                         })
                         element.firstChild.style.opacity = 0
